@@ -1,0 +1,30 @@
+{
+  "name": "ezjsblog",
+  "version": "1.0.0",
+  "description": "EZ backend for your blog.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "serve": "EZJSBLOG_MODE=prod node --experimental-modules src/index.js",
+    "dev": "nodemon src/index.js",
+    "init": "EZJSBLOG_MODE=init node --experimental-modules src/index.js",
+    "generate-key": "openssl rand -base64 32 | tr -d '\n' > .key"
+  },
+  "author": "fgrhlm",
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-rate-limit": "^6.3.0",
+    "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "sequelize": "^6.19.0",
+    "sqlite3": "^5.0.4"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15"
+  }
+}

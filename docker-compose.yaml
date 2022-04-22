@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  blog-engine:
+    image: node:latest
+    container_name: ezjsblog-engine
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./:/home/node/app"
+    working_dir: "/home/node/app"
+    command: "npm run serve"
