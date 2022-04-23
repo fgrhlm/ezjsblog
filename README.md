@@ -2,10 +2,6 @@
 
 is a small and "easy" blog engine.
 
-
-| Statements                  | Branches                | Functions                 | Lines             |
-| --------------------------- | ----------------------- | ------------------------- | ----------------- |
-| ![Statements](https://img.shields.io/badge/statements-0%25-red.svg?style=flat) | ![Branches](https://img.shields.io/badge/branches-0%25-red.svg?style=flat) | ![Functions](https://img.shields.io/badge/functions-0%25-red.svg?style=flat) | ![Lines](https://img.shields.io/badge/lines-0%25-red.svg?style=flat) |
 ## Quick start
 
 Clone this repo, run `npm run init && npm run generate-key`. Two new files should have shown up in the root directory `blog.db` and `.key`. `blog.db` is a sqlite3 database file and is the file that holds all of your posts. `.key` is exactly what it sounds like. Instead of a username+password combo, ezjsblog uses this file to authenticate you when making edits. Make sure to keep it in a safe place. If you accidentally remove this file you can simply just generate a new one. As long as there is a keyfile in the root directory everything should just work. To minimize manual typing you can just run `init.sh`
