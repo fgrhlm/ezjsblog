@@ -8,7 +8,8 @@
     "serve": "EZJSBLOG_MODE=prod node --experimental-modules src/index.js",
     "dev": "nodemon src/index.js",
     "init": "EZJSBLOG_MODE=init node --experimental-modules src/index.js",
-    "generate-key": "openssl rand -base64 32 | tr -d '\n' > .key"
+    "generate-key": "openssl rand -base64 32 | tr -d '\n' > .key",
+    "test": "nyc --all --reporter=json-summary --reporter=text mocha src/test && node_modules/.bin/istanbul-badges-readme"
   },
   "author": "fgrhlm",
   "license": "MIT",
@@ -24,7 +25,12 @@
     "sqlite3": "^5.0.4"
   },
   "devDependencies": {
-    "jest": "^27.5.1",
-    "nodemon": "^2.0.15"
+    "axios": "^0.26.1",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "istanbul-badges-readme": "^1.8.1",
+    "mocha": "^9.2.2",
+    "nodemon": "^2.0.15",
+    "nyc": "^15.1.0"
   }
 }

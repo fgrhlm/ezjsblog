@@ -1,8 +1,8 @@
 import express from "express";
 import helmet from "helmet";
 import compression from "compression";
+import RootRouter from "../routes/index.js";
 import db from "./db.js";
-import RootRouter from "./routes/index.js";
 import "dotenv/config";
 import dotenv from "dotenv";
 import errorHandlerAll from "./error.js";
@@ -13,11 +13,10 @@ dotenv.config();
 
 try {
     await db.authenticate();
-    
+
     if(process.env.EZJSBLOG_MODE == "init"){
         await db.sync();
     }
-
     console.log("db connection OK!");
 }catch(e){
     console.error(`db connection failed! .. ${e}`)

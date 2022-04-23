@@ -1,6 +1,6 @@
-import app from "./app.js";
+import app from "./common/app.js";
 
-const PORT = process.env.APP_PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 if(process.env.EZJSBLOG_MODE === "init"){
     process.exit()
