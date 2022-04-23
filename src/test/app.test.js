@@ -1,4 +1,3 @@
-import axios from "axios";
 import chai from "chai";
 import chaiHttp from "chai-http";
 import app from "../common/app.js";

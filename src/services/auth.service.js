@@ -2,7 +2,7 @@ import fs from "fs";
 import jwt from "jsonwebtoken";
 
 const AuthService = {
-    _authorize: async (reqKey) => {
+    _authorize: (reqKey) => {
         const key = fs.readFileSync(".key", "utf8");
         const sign = {"author": process.env.AUTHOR}
         const secret = process.env.JWT_SECRET;
@@ -14,7 +14,7 @@ const AuthService = {
             return token;
         }
 
-        return null;
+        return "";
     }
 }
 

@@ -6,7 +6,7 @@ const AuthController = {
 
         const token = await AuthService._authorize(reqKey);
         
-        if(token != null){
+        if(token.length > 0){
             return res.status(200).json({"token": token});
         }else{
             return res.status(500).json({"message": "auth failed!"});

@@ -9,7 +9,7 @@
     "dev": "nodemon src/index.js",
     "init": "EZJSBLOG_MODE=init node --experimental-modules src/index.js",
     "generate-key": "openssl rand -base64 32 | tr -d '\n' > .key",
-    "test": "nyc --reporter=text mocha"
+    "test": "nyc --reporter=text mocha src/test"
   },
   "author": "fgrhlm",
   "license": "MIT",
