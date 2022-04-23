@@ -7,9 +7,8 @@
   "scripts": {
     "serve": "EZJSBLOG_MODE=prod node --experimental-modules src/index.js",
     "dev": "nodemon src/index.js",
-    "init": "EZJSBLOG_MODE=init node --experimental-modules src/index.js",
     "generate-key": "openssl rand -base64 32 | tr -d '\n' > .key",
-    "test": "mocha src/test"
+    "test": "EZJSBLOG_MODE=test mocha src/test && rm test.db"
   },
   "author": "fgrhlm",
   "license": "MIT",

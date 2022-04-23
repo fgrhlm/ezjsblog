@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize"; 
-import db from "../common/db.js";
+import { db } from "../common/db.js";
 
 const PostModel = db.define("Post", {
     title: DataTypes.STRING,

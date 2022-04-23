@@ -32,7 +32,7 @@ describe("GET /posts", () => {
             .request(app)
             .get("/posts/?page=1")
 
-        res.should.have.status(200)
+        res.should.have.status(500)
         res.body.should.be.a("array")
     })
 })
@@ -108,10 +108,10 @@ describe("PATCH /posts", () => {
             .set({"authorization": `Bearer ${JWT_TOKEN}`})
 
         res.should.have.status(200);
-        res.body.should.be.a("array");
+        res.body.should.be.a("object");
     })
 
-    it("with invalid token -> should return 200", async ()  => {
+    it("with invalid token -> should return 500", async ()  => {
         const res = await chai
             .request(app)
             .patch("/posts/1")
@@ -125,7 +125,7 @@ describe("PATCH /posts", () => {
 
 
 describe("DELETE /posts", () => {
-    it("with invalid token -> should return 200", async ()  => {
+    it("with invalid token -> should return 500", async ()  => {
         const res = await chai
             .request(app)
             .delete("/posts/1")
@@ -142,7 +142,7 @@ describe("DELETE /posts", () => {
             .set({"authorization": `Bearer ${JWT_TOKEN}`})
 
         res.should.have.status(200);
-        res.body.should.be.a("array");
+        res.body.should.be.a("object");
     })
 
 })

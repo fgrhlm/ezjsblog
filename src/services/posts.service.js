@@ -31,7 +31,7 @@ const PostsService = {
             where: {id: id}
         })
 
-        return [query]
+        return {"deleted": query}
     },
     _update: async (post) => {
         const query = await PostModel.update(
@@ -44,7 +44,7 @@ const PostsService = {
             }
         )
 
-        return query;
+        return {"updated": query};
     }
 }
 
