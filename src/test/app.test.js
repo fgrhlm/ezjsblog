@@ -30,10 +30,10 @@ describe("GET /posts", () => {
     it("with invalid params -> should return 500", async () => {
         const res = await chai
             .request(app)
-            .get("/posts/?page=1")
+            .get("/posts/invalid-params")
 
         res.should.have.status(500)
-        res.body.should.be.a("array")
+        res.body.should.be.a("object")
     })
 })
 

@@ -8,12 +8,13 @@
     "serve": "EZJSBLOG_MODE=prod node --experimental-modules src/index.js",
     "dev": "nodemon src/index.js",
     "generate-key": "openssl rand -base64 32 | tr -d '\n' > .key",
-    "test": "EZJSBLOG_MODE=test mocha src/test && rm test.db"
+    "test": "EZJSBLOG_MODE=test mocha src/test"
   },
   "author": "fgrhlm",
   "license": "MIT",
   "dependencies": {
     "compression": "^1.7.4",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "express-rate-limit": "^6.3.0",

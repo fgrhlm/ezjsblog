@@ -8,6 +8,7 @@ import dotenv from "dotenv";
 import errorHandlerAll from "./error.js";
 import logger from "./logger.js";
 import limiter from "./rateLimiter.js";
+import cors from "cors";
 
 dotenv.config();            // Load environment variables from .env
 dbAuth();                   // Exit here if db connection fails
@@ -17,6 +18,7 @@ const app = express()       // https://expressjs.com/en/5x/api.html
 
 // Middleware
 app.use(helmet());          // https://www.npmjs.com/package/helmet
+app.use(cors());            // https://www.npmjs.com/package/cors
 app.use(limiter);           // https://www.npmjs.com/package/express-rate-limit
 app.use(compression());     // https://www.npmjs.com/package/compression
 app.use(express.json());    // https://expressjs.com/en/5x/api.html#express.json

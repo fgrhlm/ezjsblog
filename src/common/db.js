@@ -23,8 +23,6 @@ const dbAuth = async () => {
     try {
         await db.authenticate();    // https://sequelize.org/api/v6/class/src/sequelize.js~sequelize#instance-method-authenticate
         await db.sync();            // https://sequelize.org/api/v6/class/src/sequelize.js~sequelize#instance-method-sync
-        
-        console.log("db connection OK!");
     }catch(e){
         console.error(`db connection failed! .. ${e}`);
         process.exit();

@@ -1,3 +1,4 @@
+import { expect } from "chai";
 import PostsService from "../services/posts.service.js";
 
 const PostsController = {
@@ -6,17 +7,16 @@ const PostsController = {
 			Extracts the id of the wanted row.
 			Sends it off to the posts-service.
 		*/
-		const id = req.params.id;
-
-		if(id){
+		
+			const id = req.params.id;
+			
 			const query = await PostsService._findOne(id);
 			
-			if(query){
+			if(query && id.length > 0){
 				return res.status(200).json(query);
 			}else{
-				return res.status(404).json({"message": "no rows with matching id found."});
+				return res.status(500).json({"message": "no rows with matching id found."});
 			}
-		}
     },
     _findAll: async (req,res) => {
 		/*

@@ -2,6 +2,7 @@ import fs from "fs";
 import AuthService from "../services/auth.service.js";
 import chai, { expect } from "chai";
 
+
 const valid_key = fs.readFileSync(".key", "utf8");
 const invalid_key = "0xdeadbeef"
 

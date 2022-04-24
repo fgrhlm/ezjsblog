@@ -2,9 +2,6 @@ import PostsService from "../services/posts.service.js";
 import {db, dbAuth} from "../common/db.js";
 import chai, { expect } from "chai";
 
-
-    
-
 chai.should();
 dbAuth();
 
